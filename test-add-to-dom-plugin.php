@@ -83,32 +83,12 @@ function test_add_to_dom_plugin()
         add_action('woocommerce_single_product_summary', 'add_3d_model_viewer');
 
         //added for testing - cor --------------------------------
-        <?php
-        if (!defined('ABSPATH')) {
-            exit;
+        add_action('woocommerce_product_thumbnails', 'test_model_in_thumbnail', 25);
+
+        function test_model_in_thumbnail() {
+            echo '<div style="background: red; width: 100px; height: 100px;">Thumbnail Debug</div>';
         }
-        
-        function enqueue_jquery_for_woocommerce() {
-            if (is_product()) { 
-                wp_enqueue_script('jquery');
-            }
-        }
-        add_action('wp_enqueue_scripts', 'enqueue_jquery_for_woocommerce');
-        
-        add_action('wp_footer', 'custom_jquery_script', 20);
-        
-        function custom_jquery_script() {
-            if (is_product()) { 
-                ?>
-                <script>
-                    jQuery(document).ready(function($) {
-                        $('.flex-control-thumbs').append('<li><div style="background: red; width: 100px; height: 100px;"></div></li>');
-                    });
-                </script>
-                <?php
-            }
-        }
-        
+         
         // -------------------------------------------------------
         
     }
