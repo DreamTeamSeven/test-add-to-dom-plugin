@@ -47,8 +47,16 @@
   margin: 10px;
 } */
 
-.woocommerce-product-gallery__image model-viewer {
-  display: block !important;
+/* Trying thumbnail height */
+.woocommerce-product-gallery__image {
+  display: inline-block;
   width: 100%;
   height: auto;
+}
+
+.polymuse-model-viewer {
+  display: inline-block;
+  margin: 10px; 
+  width: 100px; 
+  height: 100px;
 }
