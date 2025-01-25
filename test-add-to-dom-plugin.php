@@ -83,12 +83,12 @@ function test_add_to_dom_plugin()
         add_action('woocommerce_single_product_summary', 'add_3d_model_viewer');
 
         //added for testing - cor --------------------------------
-        add_action('woocommerce_before_single_product_summary', 'test_model_in_carousel_debug', 20);
+        add_action('woocommerce_product_thumbnails', 'test_model_in_thumbnail', 25);
 
-        function test_model_in_carousel_debug() {
-            echo '<div style="background: blue; width: 100px; height: 100px;">Debugging Box</div>';
+        function test_model_in_thumbnail() {
+            echo '<div style="background: red; width: 100px; height: 100px;">Thumbnail Debug</div>';
         }
-        
+         
         // -------------------------------------------------------
         
     }
