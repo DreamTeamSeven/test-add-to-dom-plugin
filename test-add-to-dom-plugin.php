@@ -81,7 +81,15 @@ function test_add_to_dom_plugin()
         add_action('wp_enqueue_scripts', 'enqueue_buttons_css');
         add_action('wp_enqueue_scripts', 'enqueue_model_viewer_script');
         add_action('woocommerce_single_product_summary', 'add_3d_model_viewer');
+
+        //added for testing - cor -------------------------
+        add_action('woocommerce_before_single_product_summary', 'test_hook_for_carousel', 20);
+    
+        function test_hook_for_carousel() {
+            echo '<div>Testing the Hook</div>';
+        // -------------------------------------------------------
     }
+}
 }
 
 test_add_to_dom_plugin();
