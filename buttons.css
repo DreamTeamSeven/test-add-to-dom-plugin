@@ -46,3 +46,9 @@
 /* .view-in-space-button {
   margin: 10px;
 } */
+
+.woocommerce-product-gallery__image model-viewer {
+  display: block !important;
+  width: 100%;
+  height: auto;
+}

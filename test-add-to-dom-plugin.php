@@ -83,14 +83,12 @@ function test_add_to_dom_plugin()
         add_action('woocommerce_single_product_summary', 'add_3d_model_viewer');
 
         //added for testing - cor -------------------------
-        add_action('woocommerce_product_thumbnails', 'add_3d_model_to_carousel', 20);
+        add_action('woocommerce_product_thumbnails', 'test_model_in_carousel', 20);
 
-        function add_3d_model_to_carousel() {
-            echo '<div class="woocommerce-product-gallery__image polymuse-model-viewer">';
-            echo '<a href="#" class="woocommerce-product-gallery__trigger">';
-            echo '<model-viewer src="https://modelviewer.dev/shared-assets/models/Astronaut.glb" ar auto-rotate camera-controls></model-viewer>';
-            echo '</a>';
-            echo '</div>';
+        function test_model_in_carousel() {
+        echo '<div class="woocommerce-product-gallery__image">';
+        echo '<div style="background: red; width: 100px; height: 100px;"></div>'; // Temporary visual element
+        echo '</div>';
         // -------------------------------------------------------
         }
     }
