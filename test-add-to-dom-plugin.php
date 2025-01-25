@@ -83,19 +83,12 @@ function test_add_to_dom_plugin()
         add_action('woocommerce_single_product_summary', 'add_3d_model_viewer');
 
         //added for testing - cor --------------------------------
-
         add_action('woocommerce_product_thumbnails', 'test_model_in_carousel', 20);
 
         function test_model_in_carousel() {
-        echo '<div class="woocommerce-product-gallery__image">';
-        echo '<div style="background: red; width: 100px; height: 100px;"></div>'; // Temporary visual element
-        echo '</div>';
+            echo '<div style="background: red; width: 100px; height: 100px;"></div>';
         }
-        
-        
-        
-        
-
+    
         // -------------------------------------------------------
         
     }
