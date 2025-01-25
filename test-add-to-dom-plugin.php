@@ -93,8 +93,16 @@ function test_add_to_dom_plugin()
                 </model-viewer>
             </div>
             <?php
-        // -------------------------------------------------------
         }
+
+        add_action('woocommerce_before_single_product_summary', 'test_thumbnail', 20);
+
+        function test_thumbnail() {
+        echo '<div style="width: 100px; height: 100px; background: red;"></div>';
+        }
+
+        // -------------------------------------------------------
+        
     }
 }
 
