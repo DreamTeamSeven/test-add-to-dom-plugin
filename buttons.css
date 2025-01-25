@@ -47,16 +47,16 @@
   margin: 10px;
 } */
 
-/* Trying thumbnail height */
+
+/* For thumbnail and placeholder */
 .polymuse-model-viewer {
-  width: 100px; /* Match other thumbnails */
+  width: 100%; /* Make it responsive */
   height: auto;
-  margin-right: 10px; /* Adjust for spacing */
-  display: inline-block; /* Align with other thumbnails */
 }
 
-.woocommerce-product-gallery__image model-viewer {
-  width: 100%;
+.flex-control-thumbs img {
+  max-width: 100px;
   height: auto;
-  object-fit: cover; /* Scale properly */
+  margin: 5px;
+  cursor: pointer; /* Indicate interactivity */
 }
