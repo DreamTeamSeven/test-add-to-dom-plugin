@@ -49,14 +49,14 @@
 
 /* Trying thumbnail height */
 .polymuse-model-viewer {
-  width: 100px; 
+  width: 100px; /* Match other thumbnails */
   height: auto;
-  margin: 5px;
-  display: inline-block; 
+  margin-right: 10px; /* Adjust for spacing */
+  display: inline-block; /* Align with other thumbnails */
 }
 
 .woocommerce-product-gallery__image model-viewer {
   width: 100%;
   height: auto;
-  object-fit: cover; 
+  object-fit: cover; /* Scale properly */
 }
