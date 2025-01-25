@@ -25,3 +25,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+//from client
+jQuery(document).ready(function($) {
+
+    function adjustModelViewerHeight() {
+        var galleryHeight = $('.woocommerce-product-gallery__wrapper').height();
+        $('.polymuse-model-viewer').height(galleryHeight);
+    }
+
+    adjustModelViewerHeight();
+    $(window).resize(adjustModelViewerHeight);
+});
