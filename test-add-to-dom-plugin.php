@@ -57,7 +57,7 @@ function enqueue_model_viewer_script()
     echo '<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>';
 }
 
-/*function add_3d_model_viewer()
+function add_3d_model_viewer()
 {
     ?>
     <div id="model-viewer-container">
@@ -67,7 +67,6 @@ function enqueue_model_viewer_script()
     </div>
     <?php
 }
-    */
 
 function test_add_to_dom_plugin()
 {
@@ -92,7 +91,6 @@ function test_add_to_dom_plugin()
             echo '<model-viewer src="https://modelviewer.dev/shared-assets/models/Astronaut.glb" ar auto-rotate camera-controls></model-viewer>';
             echo '</a>';
             echo '</div>';
-        
         // -------------------------------------------------------
         }
     }
