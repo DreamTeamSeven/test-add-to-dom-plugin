@@ -83,13 +83,16 @@ function test_add_to_dom_plugin()
         add_action('woocommerce_single_product_summary', 'add_3d_model_viewer');
 
         //added for testing - cor --------------------------------
-        add_action('woocommerce_product_thumbnails', 'add_3d_model_thumbnail', 25);
 
-        function add_3d_model_thumbnail() {
-            echo '<li class="woocommerce-product-gallery__image">';
-            echo '<img src="https://modelviewer.dev/shared-assets/models/Astronaut.webp" alt="3D Model Thumbnail" />';
-            echo '</li>';
+        add_action('woocommerce_product_thumbnails', 'test_model_in_carousel', 20);
+
+        function test_model_in_carousel() {
+        echo '<div class="woocommerce-product-gallery__image">';
+        echo '<div style="background: red; width: 100px; height: 100px;"></div>'; // Temporary visual element
+        echo '</div>';
         }
+        
+        
         
         
 

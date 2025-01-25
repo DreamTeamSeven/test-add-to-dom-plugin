@@ -49,10 +49,3 @@
 
 
 /* For thumbnail and placeholder */
-.flex-control-thumb img {
-  max-width: 100px; /* Match WooCommerce thumbnail size */
-  height: auto;
-  margin: 5px;
-  cursor: pointer; /* Indicate it's interactive */
-}
-
