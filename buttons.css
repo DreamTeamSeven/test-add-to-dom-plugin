@@ -48,14 +48,15 @@
 } */
 
 /* Trying thumbnail height */
-.woocommerce-product-gallery__image {
-  display: inline-block;
-  width: auto;
-  margin: 5px;
-}
-
 .polymuse-model-viewer {
-  width: 100px;
+  width: 100px; 
   height: auto;
+  margin: 5px;
+  display: inline-block; 
 }
 
+.woocommerce-product-gallery__image model-viewer {
+  width: 100%;
+  height: auto;
+  object-fit: cover; 
+}

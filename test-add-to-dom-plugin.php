@@ -83,15 +83,45 @@ function test_add_to_dom_plugin()
         add_action('woocommerce_single_product_summary', 'add_3d_model_viewer');
 
         //added for testing - cor --------------------------------
+
+        add_action('wp_enqueue_scripts', 'enqueue_model_viewer_script');
+
+        function enqueue_model_viewer_script() {
+            wp_enqueue_script(
+                'model-viewer',
+                'https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js',
+                array(),
+                null,
+                true
+            );
+        }
+
         add_action('woocommerce_product_thumbnails', 'add_3d_model_to_carousel', 20);
 
         function add_3d_model_to_carousel() {
-        echo '<div class="woocommerce-product-gallery__image polymuse-model-viewer">';
-        echo '<model-viewer src="https://modelviewer.dev/shared-assets/models/Astronaut.glb" ar auto-rotate camera-controls style="width: 100%; height: auto;"></model-viewer>';
-        echo '</div>';
-
-        // -------------------------------------------------------
+            echo '<div class="woocommerce-product-gallery__image polymuse-model-viewer">';
+            echo '<model-viewer 
+                    src="https://modelviewer.dev/shared-assets/models/Astronaut.glb" 
+                    ar 
+                    environment-image="https://modelviewer.dev/shared-assets/environments/moon_1k.hdr" 
+                    poster="https://modelviewer.dev/shared-assets/models/Astronaut.webp" 
+                    shadow-intensity="1" 
+                    camera-controls 
+                    touch-action="pan-y" 
+                    style="width: 100%; height: auto;">
+                </model-viewer>';
+            echo '</div>';
         }
+
+        add_action('woocommerce_product_thumbnails', 'add_3d_model_thumbnail', 25);
+
+        function add_3d_model_thumbnail() {
+            echo '<li>';
+            echo '<img src="https://modelviewer.dev/shared-assets/models/Astronaut.webp" alt="3D Model Thumbnail" />';
+            echo '</li>';
+        }
+        // -------------------------------------------------------
+        
     }
 }
 
