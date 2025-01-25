@@ -57,7 +57,7 @@ function enqueue_model_viewer_script()
     echo '<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>';
 }
 
-function add_3d_model_viewer()
+/*function add_3d_model_viewer()
 {
     ?>
     <div id="model-viewer-container">
@@ -67,6 +67,7 @@ function add_3d_model_viewer()
     </div>
     <?php
 }
+    */
 
 function test_add_to_dom_plugin()
 {
@@ -83,17 +84,13 @@ function test_add_to_dom_plugin()
         add_action('woocommerce_single_product_summary', 'add_3d_model_viewer');
 
         //added for testing - cor -------------------------
-        add_action('woocommerce_product_thumbnails', 'add_3d_model_to_carousel', 20);
+        add_action('woocommerce_product_thumbnails', 'test_model_in_carousel', 20);
 
-        function add_3d_model_to_carousel() {
-        
+        function test_model_in_carousel() {
         echo '<div class="woocommerce-product-gallery__image">';
-        echo '<a href="#" class="woocommerce-product-gallery__trigger">';
-        echo '<model-viewer src="https://modelviewer.dev/shared-assets/models/Astronaut.glb" ar auto-rotate camera-controls style="width: 100%; height: auto;"></model-viewer>';
-        echo '</a>';
+        //placeholder
+        echo '<div style="background: red; width: 100px; height: 100px;"></div>'; 
         echo '</div>';
-
-
         // -------------------------------------------------------
         }
     }
